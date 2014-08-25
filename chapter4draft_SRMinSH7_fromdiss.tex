@@ -1,0 +1,857 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AGUtmpl.tex: this template file is for articles formatted with LaTeX2e,
+% Modified April 2011
+%
+% This template includes commands and instructions
+% given in the order necessary to produce a final output that will
+% satisfy AGU requirements.
+%
+% PLEASE DO NOT USE YOUR OWN MACROS
+% DO NOT USE \newcommand, \defcommand, or \renewcommand. 
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% All questions should be e-mailed to latex@agu.org.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Step 1: Set the \documentclass
+%
+% There are two options for article format: two column (default)
+% and draft.
+%
+% PLEASE USE THE DRAFT OPTION TO SUBMIT YOUR PAPERS.
+% The draft option produces double spaced output.
+%
+% Choose the journal abbreviation for the journal you are
+% submitting to:
+
+% jgrga JOURNAL OF GEOPHYSICAL RESEARCH
+% gbc   GLOBAL BIOCHEMICAL CYCLES
+% grl   GEOPHYSICAL RESEARCH LETTERS
+% pal   PALEOCEANOGRAPHY
+% ras   RADIO SCIENCE
+% rog   REVIEWS OF GEOPHYSICS
+% tec   TECTONICS
+% wrr   WATER RESOURCES RESEARCH
+% gc    GEOCHEMISTRY, GEOPHYSICS, GEOSYSTEMS
+
+% (If you are submitting to a journal other than jgrga,
+% substitute the initials of the journal for "jgrga" below)
+
+%\documentclass[draft,grl]{AGUTeX}  % @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OPTIONAL:
+% To produce a two-columned version:
+\documentclass[grl]{AGUTeX}  % @@
+
+% Two-columned format can be used to estimate the number of pages
+% for the final published PDF.
+
+% PLEASE USE THE DRAFT OPTION TO SUBMIT YOUR PAPERS.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OPTIONAL:
+% To create numbered lines:
+
+% If you don't already have lineno.sty, you can download it from
+% http://www.ctan.org/tex-archive/macros/latex/contrib/ednotes/
+% (or search the internet for lineno.sty ctan), available at TeX Archive Network (CTAN).
+% Take care that you always use the latest version.
+
+% To activate the commands, uncomment \usepackage{lineno}
+% and \linenumbers*[1]command, below:
+
+% \usepackage{lineno}
+% \linenumbers*[1]
+
+%  To add line numbers to lines with equations:
+
+%  \begin{linenomath*}
+%  \begin{equation}
+%  \end{equation}
+%  \end{linenomath*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Figures and Tables
+%
+% When submitting articles through the GEMS system:
+% COMMENT OUT ANY COMMANDS THAT INCLUDE GRAPHICS.
+% (See FIGURES section near the end of the file.)
+
+%  Figures and tables should be placed AT THE END OF THE ARTICLE,
+%  after the references.
+%
+%  Uncomment the following command to include .eps files
+%  (comment out this line for draft format):
+%@@ \usepackage[dvips]{graphicx}
+ 
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{lscape}
+
+%
+%  Uncomment the following command to allow illustrations to print
+%   when using Draft:
+  \setkeys{Gin}{draft=false}  % @@
+%
+% Substitute one of the following for [dvips] above
+% if you are using a different driver program and want to
+% proof your illustrations on your machine:
+%
+% [xdvi], [dvipdf], [dvipsone], [dviwindo], [emtex], [dviwin],
+% [pctexps],  [pctexwin],  [pctexhp],  [pctex32], [truetex], [tcidvi],
+% [oztex], [textures]
+%
+% See how to enter figures and tables at the end of the article, after
+% references.
+%
+%% ------------------------------------------------------------------------ %%
+%
+%  ENTER PREAMBLE
+%
+%% ------------------------------------------------------------------------ %%
+
+% Author names in capital letters:
+\authorrunninghead{MCCUSKER ET AL.}
+
+% Shorter version of title entered in capital letters:
+\titlerunninghead{GEOENGINEERING THE SOUTHERN HEMISPHERE}
+
+% Author mailing address: please repeat this command for
+% each author and alphabetize authors:
+
+%\authoraddr{R. C. Bales,
+%Department of Hydrology and Water Resources, University of
+%Arizona, Harshbarger Building 11, Tucson, AZ 85721, USA.
+%(roger@hwr.arizona.edu)}
+
+%\authoraddr{J. R. McConnell, Division of Hydrologic
+%Sciences, 123 Main Street, Desert Research Institute, Reno, NV
+%89512, USA.}
+
+%\authoraddr{E. Mosley-Thompson, Department of Geography,
+%Ohio State University, 123 Orange Boulevard, Columbus, OH 43210,
+%USA.}
+
+%\authoraddr{R. Williams, Department of Space Sciences, University of
+%Michigan, 123 Brown Avenue, Ann Arbor, MI 48109, USA.}
+
+%\authoraddr{Francesco Visconti, Dipartimento di Idraulica, 
+%Trasporti ed Infrastrutture Civili, Politecnico di Torino, 
+%Corso Duca degli Abruzzi 24, I-10129, Torino, Italy.
+
+\begin{document}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  TITLE
+%
+%% ------------------------------------------------------------------------ %%
+
+
+%\title{Stratospheric aerosol injections may not effectively cool the Southern Hemisphere}
+%\title{The response of the Southern Hemisphere to stratospheric sulfate injections}
+\title{Inefficacy of stratospheric sulfate injections in the Southern Hemisphere}
+%\title{Stratopsheric sulfate injections may not save the West Antarctic Ice Sheet}
+% @@ taken from chapter4draft_SRMinSH6_fromdiss.tex: this is the version from my dissertation. Here I am attempting to streamline and remove the timescale stuff.
+%
+% e.g., \title{Terrestrial ring current:
+% Origin, formation, and decay $\alpha\beta\Gamma\Delta$}
+%
+
+%% ------------------------------------------------------------------------ %%
+%
+%  AUTHORS AND AFFILIATIONS
+%
+%% ------------------------------------------------------------------------ %%
+
+
+%Use \author{\altaffilmark{}} and \altaffiltext{}
+
+% \altaffilmark will produce footnote;
+% matching \altaffiltext will appear at bottom of page.
+
+\authors{K. E. McCusker,\altaffilmark{1}}
+
+\altaffiltext{1}{School of Earth and Ocean Sciences,
+University of Victoria, Victoria, British Columbia, Canada.}
+
+% ----- figure options from wikibook
+% h	Place the float here, i.e., approximately at the same point it occurs in the source text (however, not exactly at the spot)
+% t	Position at the top of the page.
+% b	Position at the bottom of the page.
+% p	Put on a special page for floats only.
+% !	Override internal parameters LaTeX uses for determining "good" float positions.
+% H	Places the float at precisely the location in the LaTeX code. Requires the float package,[1] e.g., \usepackage{float}. This is somewhat equivalent to h!.
+% ---------
+
+%% ------------------------------------------------------------------------ %%
+%
+%  ABSTRACT
+%
+%% ------------------------------------------------------------------------ %%
+
+% >> Do NOT include any \begin...\end commands within
+% >> the body of the abstract.
+
+%\section{Abstract}
+\begin{abstract}
+% abstract?
+Solar radiation management (SRM) via injection of sulfate aerosols into the stratosphere has garnered attention for its potential to reduce the climate impacts of global warming, including sea level rise. However, dynamical feedbacks that arise from the combination of stratospheric sulfate aerosols and tropospheric greenhouse gases have not been considered, and may cause nonlinear behavior in subsurface ocean temperatures. Here we investigate in a fully-coupled global climate model (GCM) whether rapidly increasing stratospheric sulfate aerosol concentrations will not only reverse steric sea level rise, but also preserve Antarctic ice sheets, avoiding sea level rise due to mass input. We contrast this SRM method with an idealized scenario in which all greenhouse gases (GHG) are returned to preindustrial levels. We find that the rapid addition of a stratospheric aerosol layer does not effectively counteract upper and surface level atmospheric circulation changes caused by increasing greenhouse gases. Anomalous surface westerlies impose a stress on the Southern Ocean that causes northward Ekman transport and associated upwelling of relatively warm Circumpolar Deep Water (CDW) to the level of ice shelves. The large-scale oceanic environment under stratospheric sulfate aerosols thus leaves open the possibility of ice sheet destabilization through increased basal melt \citep{rignot02,rignot13} even in the absence of large atmospheric warming, providing a potentially large source of sea level rise. Removal of atmospheric greenhouse gases, on the other hand, restores the wind stress on the ocean, yielding relatively cooler subsurface ocean temperatures. %These results indicate that stratospheric sulfate injections, even when rapidly applied in order to curb rising seas, may leave Antarctic ice sheets in jeopardy. %  and have the potential to lessen SRM's effectiveness at saving Antarctic ice sheets \citep{mccusker12} % However, an inherent spectrum of climate system response timescales dictates that should the goal of SRM be to avoid sea level rise from thermal expansion, land surface cooling trends could become unacceptably large, whereas gently reducing land surface temperatures allows continued ocean heat uptake and hence sea level rise. This view considers only steric sea level, ignoring dynamical feedbacks that arise from the combination of stratospheric sulfate aerosols and tropospheric greenhouse gases. % High rates of idealized stratospheric sulfate injection have been shown to be the most effective geoengineering method for curbing sea levels over the 21st century \citep{moore10}. %These feedbacks have the potential to lessen SRM's effectiveness at saving the Antarctic ice sheets \citep{mccusker12}.
+
+% , similar to previous results wherein a stratospheric sulfate layer and tropospheric carbon dioxide transiently stabilized surface temperatures \citep{mccusker12} % .  particularly occurs in the Ross Sea sector,  % @@ rignot13, hatterman?
+\end{abstract}
+%% ------------------------------------------------------------------------ %%
+%
+%  BEGIN ARTICLE
+%
+%% ------------------------------------------------------------------------ %%
+
+% The body of the article must start with a \begin{article} command
+%
+% \end{article} must follow the references section, before the figures
+%  and tables.
+
+\begin{article}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  TEXT
+%
+%% ------------------------------------------------------------------------ %%
+
+% %%%%%%% David comments:
+%	couple of comments on chapter 4: 
+%	1) in fig 9b, the labels for upwelling/downwelling should be reversed. 
+%	2) fig 10b shows that the warming remains in the quickramp experiment -- from the surface to 1km deep. it is the water throughout this layer that matters for the grounded ice sheets, and in particular in the depth from ~300m to 1km (the temperature in the top 50m is more relevant to the sea ice than to the ice sheets). here you have increased upwelling throughout the period, and the water remains anomalously warm. 
+%  you might want to read more on what a 0.2C temperature increase means for changes in the ice sheet mass budget. david holland and others have written on this -- but i haven't kept up with that literature. 
+% can you put into context how long it would take to destabilize an ice sheet, if the rate of melt is 1m/yr? are there estimates in the literature from, e.g., pine island? 
+% Note from sciencemag about Joughin 2010 GRL paper (http://efdl.cims.nyu.edu/publications/refereed/grl_pig_21st_10.pdf): "Their model indicates that mass loss there may continue throughout the 21st century at rates similar to, or even slightly greater than, that of the present. They suggest that the rise in sea level by the year 2100 due purely to mass loss by Pine Island Glacier will probably lie between 1.1 and 1.8 cm, perhaps inching up to 2.7 cm�a large increase but still substantially less than the theoretical maximum of between 11 and 39 cm." http://www.sciencemag.org/content/330/6005/twil.full#compilation-1-3-article-title-1
+
+\section{Introduction}
+
+Stratospheric sulfate injections may be effective at reducing climate changes due to increased greenhouse gases in that the strategy reduces global mean temperature and precipitation in many numerical models (e.g., \cite{kravitz13}), although not equivalently \citep{bala08}. Regional disparities also remain \citep{ricke10}, including limited success at eliminating climate change  in the polar regions for a variety of reasons \citep{mccusker12}. Inhomogeneities arise due to differences in the thermodynamics of the forcings (shortwave versus longwave), differences in the 4-D structure of the forcing within the atmosphere, as well as due to differences in the dynamical response of the atmosphere to these two forcings \citep{ammann10,mccusker12}. Finally, a given rate of solar radiation management implementation cannot equally avoid changes in components of the climate system with different response timescales, such as surface temperature and sea level rise \citep{irvine12}. For example, thermosteric sea level rise significantly lags any radiative forcing increase and associated surface temperature response (e.g., \cite{wigley06,solomon10}). 
+%. Deploying a stratospheric sulfate aerosol layer may avoid some of the severe consequences of increased GHGs, especially in the tropics, but the aerosols are not as effective at eliminating climate change in the polar regions for a variety of reasons \citep{mccusker12}. Inhomogeneities arise due to differences in the thermodynamics of the forcings (shortwave versus longwave), differences in the 4-D structure of the forcing within the atmosphere, as well as due to differences in the dynamical response of the atmosphere to these two forcings \citep{ammann10,mccusker12}. Finally, a given rate of solar radiation management implementation cannot equally avoid changes in components of the climate system with different response timescales, such as surface temperature and sea level rise \citep{irvine12}. % Diverse regional temperature and precipitation anomalies remain, but they are generally smaller than regional anomalies due to increasing GHGs without sulfate injections \citep{ricke10}.
+
+%the varying response timescales of different components of the climate system means that SRM cannot equally stabilize global mean surface temperature and sea level rise, for instance \citep{irvine12} @@.  
+
+%Finally, the ability of solar radiation management to curb sea level rise depends critically on the rate at which SRM is implemented; reversing rising global mean sea level requires  
+
+%Finally, the response time of various components of the climate system will yield varying degrees of effectiveness at avoiding %Optimization of unequal changes in climate variables and in climate regions has been carried out@@  % ; a stratospheric sulfate layer is ineffective at reducing atmospheric circulation anomalies due to increased CO$_2$ \citep{mccusker12}
+
+To promptly avoid sea level rise in the face of rising greenhouse gases then, a large and rapid shock of stratospheric aerosols would need to be deployed to stop and reverse heat uptake by the ocean. The amount of aerosols that would be necessary depends on the flux imbalance at the surface (i.e., for how long GHGs accumulate in the atmosphere before initiating climate engineering) and so delayed implementation requires stronger SRM to immediately counter rising sea levels. Moreover, delayed implementation would yield additional deep ocean heat storage, which may linger at intermediate depths indefinitely \citep{gillett11}. Thermal expansion is not the only mechanism by which sea level can change, however. Ocean volume is modified by density changes due to changes in temperature and salinity, and due to mass inputs: contributions include changes in precipitation, evaporation, freshwater runoff, and ice sheet melt. Observed sea level rise in recent decades is attributed primarily to thermal expansion (thermosteric sea level rise), however contributions from runoff and ice sheet melt are expected to grow in the future as surface and ocean warming continue \citep{bindoff07}. 
+ 
+%[@@REMOVE/REDUCE] The disparate timescales inherent to the climate system response to radiative forcing introduce other inhomogeneities, the most obvious being the fast response of land surfaces versus the `recalcitrant' response of the deep ocean \citep{held10}. Solar radiation management (SRM) of any kind will introduce trade-offs between, for example, the rate at which land is cooled and the rate of sea level change due to thermal expansion \citep{irvine12} - the latter significantly lags the radiative forcing and surface temperature response (e.g., \cite{wigley06,solomon10}). The range of timescales associated with the regional response to forcing has important implications for SRM strategies attempting to avoid climate changes due to GHG increase. For example, should the goal of SRM be to cool the land surface temperature and thus reduce the climate stress on ecosystems and grain yields, the rate of temperature change imposed by SRM may need to be slow, e.g., within the range of trends over the last century. In contrast, to promptly avoid thermosteric sea level rise, the goal of SRM would be to stop and reverse heat uptake by the ocean. In the case of sulfate injections, a large and rapid shock of stratospheric aerosols would need to be deployed to accomplish that goal. The amount of aerosols necessary depends on the flux imbalance at the surface (i.e., for how long greenhouse gases accumulate in the atmosphere before beginning climate engineering) and so delayed implementation means stronger SRM would be required to immediately counter rising sea levels. Moreover, delayed implementation would mean additional deep ocean heat storage, which may linger at intermediate depths indefinitely \citep{gillett11}. %more persistent deep ocean change  % which, because of the long timescale of the ocean, requires a larger radiative forcing than what is needed to simply cool surface temperatures
+%. Delaying implementation not only means stronger SRM would be required, but more heat   % \citep{mccuskerinprep} %  --- and maintained, else risking extreme temperature rise (e.g. \cite{mccusker13}) --- 
+
+%[@@ transition from last sentence of first para to this]
+%Yet, thermal expansion is not the only mechanism by which sea level can change, however. Ocean volume is modified by density changes (``steric") due to changes in temperature (``thermosteric") and salinity (``halosteric"), and due to mass inputs: contributions include changes in precipitation, evaporation, freshwater runoff, and ice sheet melt. Observed sea level rise in recent decades is attributed primarily to thermal expansion (thermosteric sea level rise), however contributions from runoff and ice sheet melt are expected to grow in the future as surface and ocean warming continue \citep{bindoff07}. 
+
+@@Cite Rignot GRL 2014 - Curbing sea level rise via SRM has been explored using observed relationships between the response of sea level to volcanic eruptions \citep{moore10}, which have been observed to transiently lower sea level \citep{church05,gleckler06}, and by examining the steric height changes in an intermediate complexity climate model \citep{irvine12}. \citet{irvine12} additionally include the contribution to sea level from mass input with a scaling to the global mean surface temperature anomaly. These studies find that SRM, including with stratospheric aerosol injection, should reduce global mean sea level rise. However, changes in atmospheric and oceanic circulation, which can have significant impacts on both surface and basal melting of ice sheets and shelves \citep{steig13,joughin11,thoma08}, are not included. The subsurface temperature structure of the Southern Ocean is largely determined by the wind stress and the curl of the wind stress \citep{fyfe07}, which in turn is set by the circumpolar westerly jet. It has been shown that when climate is stabilized using a stratospheric sulfate layer, anomalous poleward-intensified zonal wind stress in the Southern Ocean remains, and may cause upwelling of warmer subsurface waters to the level of ice sheet outlets \citep{mccusker12}. Warmed subsurface ocean waters that destabilize marine ice sheets may introduce nonlinear or threshold behavior \citep{notz09} such that sea level change calculations underestimate the amount of rise for a given warming.
+
+%nonlinear or threshold behavior that may arise due to warmed subsurface ocean waters destabilizing marine ice sheets \citep{notz09} is not captured. Changes in atmospheric and oceanic circulation, which can have significant impacts on both surface and basal melting of ice sheets and shelves \citep{steig13,joughin11,thoma08}
+%these techniques do not capture nonlinear or threshold behavior that may be introduced by warmed subsurface ocean waters destabilizing marine ice sheets \citep{notz09}.
+%however the applicability of these studies to an actual SRM implementation is somewhat limited for different reasons. For example, observationally-based estimates of sea level change assume that climate change during the previous centuries, in which radiative forcing evolved relatively slowly and ocean heat uptake was relatively small, will be applicable in the future after a period of growing radiative imbalance and a vast amount of additional heat absorption by the ocean. Future sea level rise may have a greater proportion of its response that is `in the pipeline' than over the 20th century and this would not be captured by observationally-based estimates of future sea level rise. Likewise, scaling the contribution of mass input to sea level rise with the change in surface temperature assumes there is no threshold behavior. Nonlinearities or thresholds may be introduced by warmed subsurface ocean waters destabilizing marine ice sheets \citep{notz09}. % Additionally, contributions to sea level due to nonlinearities in ice sheet response to ocean warming are not included. 
+
+%Additionally, neither observationally-based nor model-based analyses noted in the previous paragraph address changes in the atmospheric and oceanic circulation, which can have significant impacts on both surface and basal melting of ice sheets and shelves \citep{steig13,joughin11,thoma08}. The subsurface temperature structure of the Southern Ocean is largely determined by the wind stress and the curl of the wind stress \citep{fyfe07}, which in turn is set by the circumpolar westerly jet. Indeed, when climate is stabilized using a stratospheric sulfate layer, anomalous poleward-intensified zonal wind stress in the Southern Ocean remains, and may cause upwelling of warmer subsurface waters to the level of ice sheet outlets \citep{mccusker12}. % \citet{irvine09} modeled the mass balance of Greenland under geoengineering and found that substantial nonlinearities existed based on temperature and precipitation changes, however ocean changes that could affect basal melt of marine outlet glaciers were not considered.  @@
+%However, SRM is most likely to be utilized under a scenario in which warming 
+ %essentially neglecting the vast amount of heat that the ocean will have absorbed should SRM be necessary; heat that can. 
+ %Additionally, dynamical feedbacks are ignored; these may affect the temperature of the water encroaching upon ice sheet outlets. Particularly in the Southern Ocean, atmospheric wind stress changes can substantially influence the subsurface temperature structure \citep{fyfe07}. Indeed, when climate is stabilized using a stratospheric sulfate layer, anomalous poleward-intensified zonal wind stress in the Southern Ocean remains that may cause upwelling of warmer subsurface waters to the level of ice sheet outlets \citep{mccusker12}. @@ more from outline  % Studies have shown that SRM, including stratospheric aerosols, can avoid some amount global mean sea level rise, depending on the rate of implementation \citep{moore10,irvine12}. However, there are multiple 
+
+Realistically, should SRM be utilized, it will likely be after a period of global warming that is deemed to be unacceptably large. Does residual atmospheric circulation change, combined with continued ocean heat uptake and associated subsurface warming, leave Antarctic ice sheets in jeopardy? Here we investigate the climate response to a rapid increase of SRM implementation via stratospheric sulfate aerosol injection, and further examine the ocean's role in determining the effectiveness of sulfate climate engineering in the southern hemisphere, particularly to preserve Antarctic ice sheets and curb potential sea level rise. We contrast these results with an idealized scenario in which greenhouses gases are abruptly returned to preindustrial levels. %  (for land ecosystems or ice sheet stability, for instance) % In this chapter, we examine the ability of SRM by stratospheric aerosol injection to avoid sea level rise, and in particular we consider the potential contributions of the ice sheets of Antarctica. 
+
+% other refs: armour et al 2011 (reversibility paper), yin 2011natgeo, stouffer2004?, gillett2011
+% @@ what about Moore?
+%assumes that contributions to sea level rise by land ice scales with global mean surface temperature.
+
+%fyfe 2007: poleward-intensified winds play a significant role in determining the warming structure of the subsurface southern ocean. wind position primarily determines latitudinal structure and CO2 radiative forcing primarily the amount of warming. sfc wind variations enhance surface warming in the SH beyond that of just CO2. Our simulation is *kind of* like Fyfe's Wind experiment where the winds are that of A2, but CO2 is fixed.
+%
+%moore 2010: fitting tide gauge obs to different radiative forcings, including volcanic eruptions. one point to make is that the longer the ocean uptakes heat, the more there is available to potentially encroach on Antarctic ice sheets via wind changes. SLR may not be related to observationally reconstructed relationship of SLR and GMT (if I'm understanding their methods at all).
+
+\section{Methods}
+
+In order to capture the relevant range of climate system timescales and dynamical feedbacks, we use the Community Climate System Model version 4 (CCSM4, \cite{gent11}), a state-of-the-art global climate model (GCM) with a finite volume 0.9$^\circ$x1.25$^\circ$ resolution atmosphere coupled to a nominal 1$^\circ$ full-depth ocean, sea-ice, and land models. The full-depth ocean is required in order to obtain a more realistic regional response \citep{mccusker12} and to incorporate the long timescales stemming from heat exchange with the deep ocean. %We simulate two SRM climate engineering scenarios that bookend possible scenarios that could be implemented in the future. 
+
+Two simulations from the National Center for Atmospheric Research (NCAR) are used as controls: the Climate Model Intercomparison Project 5 (CMIP5) ``business-as-usual" scenario, called Representative Concentration Pathway 8.5 (RCP8.5), reaching a radiative forcing from greenhouse gas emissions of 8.5 W/m$^{2}$ above preindustrial levels by 2100, and the 20th century simulation (20thC) forced with historical greenhouse gas and aerosol emissions plus volcanic eruptions. The climate engineering simulations are branched from RCP8.5 at year 2035 when the global mean surface air temperature (SAT) is approximately 1$^\circ$C greater than that of the end of the 20th century average (computed for years 1970-1999). In year 2035, a prescribed stratospheric sulfate aerosol burden (as in \citet{mccusker12} and \citet{mccusker14}) is commenced that is ramped up from zero at a rapid rate of increase. The scenario, called Quickramp, has 3 years of `quick' ramping at 8 teragrams of sulfate (SO$_4$) per year (Tg/yr), followed by ramping at 0.67 Tg/yr for the remainder of the simulation (calculated to provide a roughly equal and opposite radiative forcing to the RCP8.5 scenario transiently). %The Slowramp scenario has 50 years of `slow' ramping at 1.1 Tg/yr. After 50 years, the quick and slow scenarios reach approximately the same sulfate burden, and ramp together at 0.67 Tg/yr for the remainder of the simulations. % The right panel of Figure \ref{fig:tsts} displays the sulfate ramping scenarios.
+
+We conducted four quickly ramped simulations, initialized with slightly different initial conditions. The ensemble average is presented here unless specified otherwise. We also contrast the sulfate engineering simulation with an idealized representation of complete mitigation and carbon sequestration by conducting one simulation, called GHGrem, in which greenhouse gases (CO$_2$, CH$_4$, N$_2$O, and CFCs 11 and 12) are abruptly set to preindustrial conditions (year 1850) in the year 2035. Anomalies are presented as the difference from the 1970-1999 mean of 20thC. The epoch means that are considered are for years 2045-2054 in Quickramp, GHGrem, and RCP8.5, unless otherwise noted.%Epoch means considered in the present analysis are for years 1970-1999 of 20thC and years 2045-2054 of Quickramp, Slowramp, GHGrem, and RCP8.5, unless otherwise noted. %The 'quick' rate of increase amounts to a 2.67 teragrams of sulfur equivalent (TgS) increase per year for the first 3 years, followed by a smaller rate of about 0.28 TgS per year, so that it provides a roughly equal and opposite radiative forcing to the \textit{rcp8.5} scenario transiently until the end of the simulation in year 2095. The 'slow' rate is equal to a constant rate of increase of 0.37 TgS per year for 50 years, followed by 10 years of the same rate as quickramp, 0.28 TgS.  %@@Add something about how these amounts compare to Pinatubo. @@ Need to update figs w/ slowramp to have ensemble data.
+
+%\section{Results}
+
+\section{Results}
+
+The time evolution of global mean surface air temperature (SAT) for business-as-usual and climate engineering scenarios is shown in Figure \ref{fig:gmts}a. Quickramp (blue) represents a scenario in which drastic climate engineering is desired (e.g., to stop sea levels from further rising), and hence entails a quick and large decrease in net radiative forcing. This decrease in radiative forcing accomplishes a large amount of avoided warming compared to business-as-usual (Figure \ref{fig:gmts}a; RCP8.5 in red). The global and annual mean linear trend for the first decade following the start of SRM (years 2036-2045) is -0.94$^\circ$C/decade for the ensemble mean, and the land-only trend is even greater at -1.2 $^\circ$C/decade (Table \ref{tbl:means}). As such, Quickramp returns global mean SAT to roughly the end of the 20th century average (-0.03$^\circ$C; Table \ref{tbl:means}) and is much cooler than RCP8.5, which is 1.83$^\circ$C warmer than the end of the 20th century at that time. % SFCFLUX here? @@
+
+Accordingly, global average sea level due to changes in ocean density (representing temperature and salinity changes only \footnote{Steric sea level change is computed as: $\eta^n = H((\rho_0 / \rho_n) -1)$, where $\eta^n$ is the change in surface elevation at timestep $n$, $H$ is the global mean ocean depth, $\rho_0$ is the `baseline' global mean ocean density from the 20thC simulation averaged over 1970-1999, and $\rho_n$ is global mean density at timestep $n$. Ocean density, $\rho$, is primarily modified by changes in ocean temperature, but is also affected by changes in salinity. This calculation assumes no volume change due to freshwater input (e.g., precipitation, evaporation, river runoff, melting and freezing of sea ice), including neglecting inputs from melting ice sheets, which are not included in the model.}) reverses its rising course and starts declining upon initiation of sulfate injections (Figure \ref{fig:gmts}b). Nearly 30 cm of sea level rise is avoided by century's end, consistent with previous findings \citep{irvine12}. Thus, assuming no nonlinear or threshold behavior in the contribution of freshwater mass input from land ice, a high rate of sulfate injections could promptly reduce or avoid sea level rise, at the expense of high SAT trends \citep{mccuskerinprep}. However, next we investigate the subsurface ocean environment in the context of heat available for melting in ice sheet outlet regions.
+%Quickramp, a goal of which might be to immediately curb sea level rise, does just so and nearly returns steric sea level to 20thC by 2095, at the expense of rapid land SAT trends of almost -1$^\circ$C/decade at the start of SRM.
+
+% Table
+%\begin{table*}
+%\centering
+%\begin{tabular}{ l  || c | c || c | c }
+%   Simulation        &  GMSAT     	&  LMSAT     	& GMSAT Trend	& LMSAT Trend \\
+%                             & ($^\circ$C) 	& ($^\circ$C) 	&  ($^\circ$C/dec) &   ($^\circ$C/dec) \\
+%  \hline    
+% RCP8.5  		 & 1.83   	&  2.37   	&    0.64   		& 0.81	  \\
+%% Slowramp      	&  1.02  	&   1.21   	&    -0.24   	&  -0.39 \\
+% Quickramp      	&  -0.03  	&   -0.20  	&    -0.94   	&  -1.20 \\
+% GHGrem      	&  -0.36  	&   -0.53   	&    -0.81  		&  -0.93 \\
+% \hline
+% 20thC 	     	&   	 	&  	   	&    0.12   		&  0.14 \\          
+%  \hline  
+%\end{tabular}
+%\caption{Annual mean, global mean (GMSAT) and land mean (LMSAT) SAT difference between years 2045-2054 and the end of the 20th century (20thC 1970-1999 mean) for the listed set of simulations, and annual mean, global mean linear trend (GMSAT Trend) and land mean linear trend (LMSAT Trend) for the first decade following the start of climate engineering (years 2036-2045), in units of $^\circ$C/decade. 20thC trends listed are an average of 10-year trends sampled from years 1900-2005 of six 20thC ensemble members.
+%\label{tbl:means}}
+%\end{table*}
+% Listed 20thC trends are the maximum (average?) decadal trends sampled from years 1900-2005 of six 20thC ensemble members. @@
+%  20thC 	     	&  0.76 	&  0.87   	&    xx   		&  xx \\          % anomalies from 1850s control
+
+\begin{figure*}[htbp] % the star afterwards makes it a one column fig in a 2-col document
+\centering
+ \noindent\includegraphics[width=39pc]{figures/SATSLRtimeseries2.pdf}
+\caption{\textbf{Timeseries of SAT and SLR.} Timeseries of global-mean annual-mean \textbf{(a)} surface air temperature (SAT; $^\circ$C), and \textbf{(b)} steric sea level rise (SLR; cm) due to changes in ocean density, shown as anomalies from 20thC (1970-1999 average). Quickramp and Slowramp curves are ensemble averages. Light blue and light green shading in (a) indicates the spread of the Quickramp and Slowramp ensemble of simulations, respectively.}
+\label{fig:gmts} % @@ do I need to note that years 2076-2078 are interpolated b/c there was missing data?
+\end{figure*}
+
+%Global mean, annual mean SAT (Figure \ref{fig:gmts}a) behaves in a way that is expected based on the imposed sulfate forcing; Slowramp gradually and linearly cools SAT, whereas Quickramp cools rapidly in the first few years and more slowly thereafter. In the second decade following the start of stratospheric sulfate injections (2045-2054), Slowramp remains 1$^\circ$C warmer than the end of the 20th century, while Quickramp returns global mean SAT to roughly the end of the 20th century average (-0.03$^\circ$C; Table \ref{tbl:means}). Each SRM scenario is much cooler than RCP8.5, which is 1.83$^\circ$C warmer than the end of the 20th century at that time. 
+
+%Global average sea level due to changes in ocean density (representing temperature and salinity changes only\footnote{Steric sea level change is computed as: $\eta^n = H((\rho_0 / \rho_n) -1)$, where $\eta^n$ is the change in surface elevation at timestep $n$, $H$ is the global mean ocean depth, $\rho_0$ is the `baseline' global mean ocean density from the 20thC simulation averaged over 1970-1999, and $\rho_n$ is global mean density at timestep $n$. Ocean density, $\rho$, is primarily modified by changes in ocean temperature, but is also affected by changes in salinity. This calculation assumes no volume change due to freshwater input (e.g., precipitation, evaporation, river runoff, melting and freezing of sea ice), including neglecting inputs from melting ice sheets, which are not included in the model.})
+% is shown in Figure \ref{fig:gmts}b. The climate engineering scenarios avoid 20 to nearly 30 cm of sea level rise by century's end, consistent with previous findings \citep{irvine12}, however, Slowramp lags about 15 years before sea level stops rising. Sea level in Slowramp reaches the value it was at the start of SRM after about 35 years, and does not return to 20thC levels even by 2095. Quickramp, a goal of which might be to immediately curb sea level rise, does just so and nearly returns steric sea level to 20thC by 2095, at the expense of rapid land SAT trends of almost -1$^\circ$C/decade at the start of SRM.   
+% SLR: The change in surface elevation due to steric expansion is computed as:
+%
+%    <eta^n> = <H> ((rho_naught/rho_n) - 1)
+%
+% where <H>, the ratio of ocean volume to surface area, is the mean ocean
+% depth, rho_naught is the initial global mean density, rho_n is the global
+% mean density at the nth model timestep computed assuming there is no
+% change in total volume, and eta^n is the estimated change in sea-surface
+% elevation at the nth timestep due to steric expansion only.
+
+\begin{figure*}[htbp] % the star afterwards makes it a one column fig in a 2-col document
+\centering
+ \noindent\includegraphics[width=39pc]{figures/SATmaps_noslowramp.pdf}
+\caption{\textbf{Annual mean SAT anomalies.} Annual mean surface air temperature (SAT; $^\circ$C) anomaly from the 20thC (1970-1999 mean) for years 2045-2054 in the following simulations: \textbf{(a)} RCP8.5, \textbf{(b)} Quickramp, and \textbf{(c)} GHGrem.}
+\label{fig:satmaps}
+\end{figure*}
+%
+%Importantly, while the global mean temperature tracks the rate of sulfate deployment, the spatial responses to the two rates vary substantially. Slowly ramping sulfate aerosols yields a pattern similar to business-as-usual, but smaller in magnitude (compare Figure \ref{fig:satmaps}b with \ref{fig:satmaps}a). Both RCP8.5 and Slowramp exhibit more warming on land and in the polar regions. In contrast, when sulfate aerosols are increased quickly, assorted climate system response timescales become apparent; although the global mean SAT anomaly is approximately 0$^\circ$C in the second decade following commencement of SRM, Quickramp has a highly hemispherically asymmetric SAT response (Figure \ref{fig:satmaps}c), in part due to the distribution of land and ocean. Northern land temperatures are considerably overcooled (up to 1$^\circ$C in many locations) while the Southern Ocean in particular remains warm by over 1$^\circ$C in some places (Figure \ref{fig:satmaps}c). This residual warmth over the Southern Ocean even persists until the end of the century (Figure \ref{fig:satlattime}b). An implication of this spatial response is that global mean estimates of SAT trends under SRM implementation \citep{irvine12} underestimate trends that occur in regions where humans and myriad ecosystems exist --- ie. on land surfaces --- especially if SRM deployment is rapid. % (@@ calculate \% cancelled warming, and polar amplification factor)
+%
+%\begin{figure*}[htbp] % the star afterwards makes it a one column fig in a 2-col document
+%\centering
+% \noindent\includegraphics[width=39pc]{figures/SATlatbytime.pdf}
+%\caption{\textbf{Annual mean, zonal mean SAT anomaly timeseries.} Annual mean, global mean (top panel) and annual mean, zonal mean (bottom panel) surface air temperature (SAT; $^\circ$C) anomaly from the 20thC (1970-1999 mean) with time for \textbf{(a)} RCP8.5, \textbf{(b)} Quickramp, and \textbf{(d)} GHGrem. Years 1940 - 2005 are 20thC, 2006-2034 are RCP8.5, and 2035 onward are the scenarios listed above.}
+%\label{fig:satlattime}
+%\end{figure*}
+
+%\subsection{Residual atmospheric circulation anomalies}
+
+
+%Here, @@ introduce potential circulation anomalies using mccusker12 and ammann10. Then introduce GHGrem.
+
+
+%The asymmetric pattern of the Quickramp response highlights the importance of the Southern Ocean's longer response timescale (e.g., \cite{manabe1991,stouffer04,yang11}) for determining the effectiveness of this climate engineering strategy in the Southern Hemisphere (SH). Is the SAT response pattern indicative of ``delayed Southern Ocean cooling", analogous to the well-known delayed warming, or is this asymmetry unique to sulfate geoengineering? Does the SAT pattern reflect similar subsurface ocean temperature features? And finally, how might this affect Antarctic ice sheet stability? To answer these questions and to serve as a contrast to sulfate geoengineering, we also simulate an idealized climate engineering scenario in which GHGs are returned instantly to preindustrial conditions (GHGrem; light blue curve in Figure \ref{fig:gmts}a). We then comparatively investigate the Southern Ocean response to the two types of negative radiative forcing simulated in Quickramp and GHGrem. %, and investigate the ocean response in comparison with Quickramp. %  that may affect ice sheet stability? 
+%
+%%Why is the Southern Ocean particularly resistant to cooling back to end-of-20th century levels? %Potential sources for slowed cooling include: enhanced vertical mixing, anomalous heat flux from ocean to atmosphere, less sea ice (?)
+%%To serve as a contrast to sulfate geoengineering, and to test whether the asymmetric SAT pattern is unique to the type of negative forcing, we also simulate an idealized climate engineering scenario in which GHGs are returned instantly to preindustrial conditions (GHGrem; pink curve in Figure \ref{fig:gmts}a). 
+%Upon reduction of GHG concentrations, global mean SAT cools rapidly in the first few years with slow cooling thereafter, consistent with a similar simulation in \citet{held10} wherein the fast components of the climate system (namely, land) rapidly respond in 3-5 years, followed by slower components coming into equilibrium. The decadal trend after GHGs are reduced is -0.81$^\circ$C/decade, comparable to that of Quickramp. The timescale to equilibration is in large part determined by the change in radiative forcing, which is nearly 4 W/m$^2$ here (as estimated from the top-of-atmosphere imbalance; Figure \ref{fig:energyts}a). Thus, GHGrem remains out of equilibrium throughout the simulation, where it is still almost 0.5$^\circ$C warmer than preindustrial conditions (gray curve in Figure \ref{fig:gmts}a). Likewise, the global oceans continue to return heat to the atmosphere until the end of the simulation (Figure \ref{fig:energyts}b).
+%%However, here the ocean has absorbed excess heat over the 20th century and for the first 35 years of the 21st century, causing the climate system to be far out of energy balance when the GHGs were removed (@@fig of TOA?). Thus, by the end of the simulation in 2081, GHGrem remains approximately @@$\circ$C warmer than preindustrial conditions (gray curve in Figure \ref{fig:gmts}), as the ocean continues to return heat to the atmosphere.
+%
+%\begin{figure*}[htbp] % the star afterwards makes it a one column fig in a 2-col document
+%\centering
+% \noindent\includegraphics[width=39pc]{figures/EnergyFluxestimeseriesanom.pdf}
+%\caption{\textbf{Timeseries of TOA flux and ocean surface heat flux.} Timeseries of global-mean annual-mean \textbf{(a)} top-of-atmosphere energy imbalance (TOA; W/m$^2$; positive downward) anomaly from the 20thC (1970-1999 mean), and \textbf{(b)} net ocean surface heat flux (OSHF; W/m$^2$; positive into ocean) anomaly from the 20thC (1970-1999 mean). Quickramp and Slowramp curves are ensemble averages. Light blue and light green shading in (a) indicates the spread of the Quickramp and Slowramp ensemble of simulations, respectively.}
+%\label{fig:energyts}
+%\end{figure*}
+
+%The global mean SAT anomaly in the second decade after GHG reduction (years 2045-2054) is equal to -0.36$^\circ$C, slightly overcooled when compared to 20thC. The high northern latitudes are ampflified similar to Quickramp, but the asymmetric pattern found in Quickramp is not as pronounced and differs in structure (Figure \ref{fig:satmaps}d compared with \ref{fig:satmaps}c). The differences in SAT pattern become more apparent when Quickramp and GHGrem global mean anomalies are each adjusted to equal zero; GHGrem exhibits large northern high latitude amplification and a relatively uniform small residual warming response elsewhere (Figure \ref{fig:satnorm}b), whereas Quickramp has polar amplification of roughly equal and opposite signs in the north and south, with particular residual warmth in the Southern Ocean (Figure \ref{fig:satnorm}a), as previously discussed. Additionally, a persistent residual warmth over the Southern Ocean --- as is evident throughout the century when stratospheric sulfates are deployed --- does not exist when GHGs are abruptly reduced (Figure \ref{fig:satlattime}c). Such enhanced surface warming over the Southern Ocean has been associated with poleward intensified winds in the Southern Hemisphere \citep{fyfe07,bitz12b,sigmond10,smith12}, and so we next turn to an investigation of changes in atmospheric circulation induced by increasing stratospheric sulfate and separately, a decrease in GHG concentrations. %@@
+%To shed light on this discrepancy, we turn to changes in atmospheric circulation, one of the climate variables that stratospheric sulfate aerosols are least effective at resolving when climate is stabilized \citep{mccusker12}. %, which have been shown to exhibit similar anomalies to increasing CO$_2$
+
+%Indeed, after about a 7 year delay, the Southern Ocean warming is roughly cancelled for the remainder of the simulation (Figure \ref{fig:satlattime}c). Note that while the global mean temperature anomaly (years 2045-2054) from the end of tthe 20th century is slightly cooler in GHGrem than in Quickramp (@@Table \ref{tbl:means}, the patterns are in fact distinct, evident when the global mean anomalies are normalized to unity (Figure \ref{fig:satnorm}). We can attribute @@  polar amp? etc? leave out?% @@might want to take a quick look at Quickramp temps a couple years later when the global mean might be more similar to GHGrem -- just to rule out gm differences
+
+%\begin{figure}%[htbp] 
+%\centering
+% \noindent\includegraphics[width=20pc]{figures/SATnormmaps.pdf}
+%\caption{Annual mean surface air temperature anomaly from the 20thC (1970-1999 mean) normalized to a global mean anomaly of unity for \textbf{(a)} Quickramp and \textbf{(b)} GHGrem, years 2045-2054. }
+%\label{fig:satnorm}
+%\end{figure}
+
+%\begin{figure}[htbp] 
+%\centering
+% \noindent\includegraphics[width=20pc]{figures/SATnormmaps_remgm.pdf}
+%\caption{\textbf{Adjusted annual mean SAT anomalies.} Annual mean surface air temperature anomaly from the 20thC (1970-1999 mean) adjusted to a global mean anomaly of zero for \textbf{(a)} Quickramp and \textbf{(b)} GHGrem, years 2045-2054. }
+%\label{fig:satnorm}
+%\end{figure}
+
+\subsection{Atmospheric circulation anomalies}
+
+Numerical simulations of SRM with stratospheric aerosols have shown residual SH poleward intensified winds, induced by differences in the vertical temperature structure of a stratospheric sulfate layer versus well-mixed tropospheric carbon dioxide \citep{ammann10,mccusker12}. These vertical anomalies and corresponding upper atmosphere and surface wind changes share features with those induced by ozone depletion \citep{gillett03,gillett13,sigmond11,thompson11} and increasing greenhouse gases \citep{gillett13,sigmond11,polvani11}. To some extent, volcanic eruptions also yield similar features (e.g., \citet{free09}), however not significantly in the SH \citep{robock07}, instead being most apparent in NH winter \citep{robock00,shindell04,stenchikov06}. Although mechanisms and structural details differ somewhat depending on the type of upper atmospheric forcing, the fundamental cause is the same: zonal wind shear is modified via thermal wind balance caused by an anomalous increase in the stratospheric pole-to-equator temperature gradient. Strengthened SH lower stratospheric/upper tropospheric winds are then associated with increased eastward eddy propagation, which in turn shifts the critical latitude for Rossby wave breaking poleward, leading to poleward shifted surface westerlies \citep{chen07}.%@@thompson%In the case of stratospheric geoengineering, the vertical zonal mean temperature and zonal wind structure is a confluence of strong tropical lower stratospheric heating due to aerosols and high latitude stratospheric cooling due to GHGs (neglecting the impact of ozone), with little change in the troposphere (cf. Figure 5 from \citet{mccusker12}).  %confluence of a greatly poleward shifted polar vortex due to aerosols with less shifted but greater strengthening due to  
+% @@ cite ferraro2011 about strato heating
+
+When aerosols are quickly increased in the stratosphere in Quickramp, vertical temperature anomalies exist in the atmosphere that are similar to those found in previous studies. The vertical zonal mean temperature structure is a combination of strong tropical lower stratospheric heating due to aerosols \citep{ferraro11} and high latitude stratospheric cooling due to GHGs, with little change in the tropospheric temperature (Figure \ref{fig:vert}a, and cf. Figure 5c from \citet{mccusker12}). The resultant zonal winds are a strengthened SH polar vortex and slight weakening of the subtropical jet (Figure \ref{fig:vert}b). %  wherein climate is instead stabilized with a stratospheric sulfate layer, with associated zonal mean zonal wind changes.
+
+\begin{figure}[htbp] % the star afterwards makes it a one column fig in a 2-col document
+\centering
+ \noindent\includegraphics[width=20pc]{figures/verticalU_T_v20thC2.pdf}  % @@  reconfigure to horizontal layout?
+\caption{\textbf{Annual mean, zonal mean temperature and zonal wind anomalies with height.} Annual mean zonal mean \textbf{(a)} temperature ($^\circ$C) anomaly and \textbf{(b)} zonal wind (m/s) anomaly from the 20thC (1970-1999 mean) for Quickramp.}
+\label{fig:vert}
+\end{figure}
+
+The upper atmospheric deviations result in surface wind and wind stress anomalies in the SH that rival those in the RCP8.5 business-as-usual scenario; they are poleward-shifted and intensified, and of similar magnitude (Figures \ref{fig:shmaps}d and \ref{fig:shmaps}e). This is quite unlike SAT, which is much cooler in Quickramp than the business-as-usual scenario (Figure \ref{fig:shmaps}a and \ref{fig:shmaps}b). In contrast, when GHGs are removed from the atmosphere, the surface wind stress signal is very nearly opposite in pattern to Quickramp and RCP8.5 (Figure \ref{fig:shmaps}f). These differences are also manifested in sea ice changes; while both climate engineering strategies cause the sea ice edge to recover to the 20thC position (15\% concentration contours shown in Figure \ref{fig:shmaps}d-f), annual average sea ice concentration near sea ice margins remains lower by up to 15\% in Quickramp, but are increased beyond 20thC concentrations by almost 10\% in GHGrem (not shown). %(@@consider adding geomip and/or ECHAM here? or appendix?) 
+%We note, however, that both climate engineering strategies yield temperature anomalies that are far reduced from the business-as-usual scenario (Figure \ref{fig:shmaps}a).% note that in my CCSM3 results: the aero run has pronounced *decreased* zonal winds over the southern ocean. the stratospheric vortex is strengthened but it's further south than when increased CO2 is also included. 
+%Similar vertical temperature anomalies exist when aerosols are quickly increased in the stratosphere in Quickramp (not shown), resulting in zonal mean zonal wind anomalies that rival those in the business-as-usual scenario.  --- that is, poleward intensified zonal mean zonal winds. This is especially evident in the Southern Hemisphere, with a  
+%Enhanced surface warming has been associated with poleward intensified winds over the Southern Ocean through increased heat flux from the ocean to the atmosphere via sea ice thickness and concentration changes \citep{fyfe07}. 
+
+\begin{figure*}[htbp] % the star afterwards makes it a one column fig in a 2-col document
+\centering
+ \noindent\includegraphics[width=30pc]{figures/SHmaps3.pdf}
+\caption{\textbf{Southern Hemisphere SAT and wind stress anomalies.} Annual mean surface air temperature ($^\circ$C) anomaly from the 20thC (1970-1999 mean) for \textbf{(a)} RCP8.5, \textbf{(b)} Quickramp, and \textbf{(c)} GHGrem, years 2045-2054. \textbf{(d), (e), and (f)} are as (a), (b), and (c) but for zonal wind stress (N/m$^2$). Positive indicates westerly stress on the ocean. Contours indicate sea ice extent (15\% concentration contour) for the 20thC (solid) and perturbed simulation (dashed).}
+\label{fig:shmaps}
+\end{figure*}
+
+%\subsection{Implications for Antarctic ice sheets}
+We have seen thus far that rapid sulfate loading to cool the globe is less effective at cooling the surface and recovering sea ice in the Southern Hemisphere than in the Northern Hemisphere, but that this is not the case when greenhouse gases are removed (at the expense of greater northern high latitude cooling). Our original motivation for simulating such a rapid climate engineering scenario was to investigate whether imminent and potentially dangerous levels of sea level rise could be avoided, even at the cost of large land surface temperature trends. Indeed, each of these strategies successfully limits steric sea level rise (Figure \ref{fig:gmts}b) but a key question remains: Given the relatively large circulation and Southern Ocean temperature anomalies lingering in Quickramp, would sea level contributions from melting ice sheets remain a threat? %ice sheet instability or collapse leading to large sea level rise be avoided as well?
+
+\section{Implications for Antarctic ice sheets}
+
+In addition to calving and surface melt, a large amount of mass loss from ice sheets occurs due to basal melt of their ice shelves \citep{joughin11}, the floating extensions of land ice sheets. These typically lie at a few hundred meters depth, near the level of the Circumpolar Deep Water (CDW), the subsurface water mass that is slightly warmer than waters above and below (-1$^\circ$C to 1$^\circ$C; \cite{yin11}). Warming of CDW, in addition to increased intrusion onto the continental shelf due to regional wind variability, can greatly increase basal melting of ice shelves \citep{joughin11,thoma08}, causing thinning and subsequent reduction in buttressing stress and increase in ice stream velocity \citep{oppenheimer98}. In short, a small warming of CDW, or a greater propensity for it to encroach on continental shelves, has the potential to cause ice shelve disintegration even in the absence of large atmospheric warming \citep{oppenheimer98}.
+
+Both climate engineering scenarios presented here in Quickramp and GHGrem provide a substantial amount of avoided surface warming to the Antarctic region --- over 100\% in the case of GHGrem (compare Figure \ref{fig:shmaps}b and \ref{fig:shmaps}c with \ref{fig:shmaps}a) --- but the significant amount of ocean heat uptake that occurred over the first third of the 21st century before climate engineering was initiated (Figure \ref{fig:energyts}b) may also pose a threat to Antarctic ice sheets, particularly the West Antarctic ice sheet (WAIS), whose grounding line is below sea level in some regions \citep{joughin11}. We thus turn to the temperature structure below the ocean's surface in the vicinity of the Antarctic coast. 
+
+\begin{figure*}[htbp] % the star afterwards makes it a one column fig in a 2-col document
+\centering
+ \noindent\includegraphics[width=39pc]{figures/SHsubsfcTEMP_wclimo2.pdf}
+\caption{\textbf{Subsurface ocean temperature climatology and anomalies.} Annual mean ocean potential temperature ($^\circ$C) in color, averaged over 200-500 meters depth for the \textbf{(a)} 20thC climatology (1970-1999 mean), and anomalies from climatology in \textbf{(c)} Quickramp, and \textbf{(e)} GHGrem for years 2045-2054 in color. Shading in \textbf{(b), (d), and (f)} are as (a), (c), and (e) but show annual mean, zonal mean ocean potential temperature ($^\circ$C) with depth (km). Solid black contours show the 20thC climatology isotherms. Contour interval in (b) is 0.1 from -1$^\circ$C to 1$^\circ$C and 1 for 1$^\circ$C and warmer. The thick, gray isotherms in (b) denote the approximate region in which water warms with depth, estimating the location of CDW (the lower isotherm is 0.6$^\circ$C and the upper is -1$^\circ$C). Dashed contours in (d) and (f) are Quickramp and GHGrem isotherms, respectively, with contour intervals of 1$^\circ$C.
+} 
+\label{fig:shsubtemp}
+\end{figure*}
+
+Southern Ocean subsurface temperature for the end of the 20th century, averaged over the 200-500 m layer is shown in Figure \ref{fig:shsubtemp}a. Mean simulated temperatures generally average between about -1$^\circ$C and 1$^\circ$C along the coastline, slightly higher than the freezing point of seawater (-1.8$^\circ$C). Small temperature perturbations can have significant impact on basal melting of ice shelves in these regions; a warming of just 0.1$^\circ$C can thin 1 m of ice shelf in a year \citep{rignot02}. Utilizing stratospheric aerosols to curb global temperatures yields residual subsurface ocean warming of up to 0.5$^\circ$C and is 0.2-0.3$^\circ$C in many Antarctic coastal locations (Figure \ref{fig:shsubtemp}c). The zonal average Southern Ocean temperature (Figure \ref{fig:shsubtemp}d) indicates that temperatures encroaching on the ice shelves average a few tenths of a degree warmer than 20thC (which is already a few tenths of a degree warmer than simulated preindustrial conditions; not shown). Drastic reduction of greenhouse gases, however, exhibits smaller residual subsurface warming, particularly near west Antarctica (with the exception of the Weddell Sea, which has similar residual warming in the two scenarios; Figure \ref{fig:shsubtemp}e). Average zonal temperature near the level of ice shelves is 0.25$^\circ$C cooler in the reduced GHG simulation than in Quickramp (Figure \ref{fig:shsubtemp}f). Were all of this average extra heat in Quickramp to go into basal melt, reducing GHGs rather than deploying stratospheric aerosols would result in 2.5 meters of ``preserved" ice shelf thickness each year. 
+
+The mid-depth warming evident in Quickramp can be understood, in part, as anomalous upwelling of relatively warm CDW (approximately delineated in Figure \ref{fig:shsubtemp}b), indicated by shoaling of the isotherms south of 65$^\circ$S (Figure \ref{fig:shsubtemp}d). This behavior is consistent with increased Ekman pumping originating from the previously discussed poleward-intensified zonal winds (Figure \ref{fig:shmaps}e) caused by stratospheric aerosols, greenhouse gases \citep{fyfe07}, and their combination. Here, we show zonal mean zonal wind stress and the curl of the wind stress as an indicator for regions of Ekman upwelling and downwelling, in Figures \ref{fig:zmtau}a and \ref{fig:zmtau}b. Quickramp exhibits a more contracted and slightly weaker region of westerly stress compared to if no geoengineering were applied (RCP8.5), but exhibits greater easterly stress than RCP8.5 north of about 55$^\circ$S. There is virtually no shift of the regions of upwelling and downwelling (the zero line of wind stress curl) in Quickramp, while Ekman pumping is slightly weaker than in RCP8.5 with nearly equivalent downwelling strength north of 60$^\circ$S. The removal of GHGs, however, causes a reversal of sign in both zonal wind stress and wind stress curl when compared to RCP8.5, resulting in anomalous downwelling, and less warming near ice shelves and elsewhere in the Southern Ocean (Figure \ref{fig:shsubtemp}f).  
+
+\begin{figure}[htbp] % the star afterwards makes it a one column fig in a 2-col document
+\centering
+ \noindent\includegraphics[width=20pc]{figures/zmTAU2.pdf}
+\caption{\textbf{Zonal mean wind stress and wind stress curl anomalies.} Annual mean, zonal mean \textbf{(a)} zonal wind stress (N/m$^2$) and \textbf{(b)} curl of the wind stress (N/m$^3$) over ocean only, as anomalies from 20thC (1970-1999 mean). Positive indicates westerlies in (a) and downwelling in (b).}
+\label{fig:zmtau}
+\end{figure}
+
+% %%%% extra from dissertation
+There are two important factors that contribute to the subsurface temperature anomalies exhibited in Quickramp and GHGrem: the ocean heat uptake that occurred prior to the initiation of climate engineering, and the change in wind stress inducing changes in upwelling strength. The ocean heat uptake causes the subsurface ocean waters to be warmer at the start of climate engineering, particularly in the level of the CDW but also deeper throughout the water column (see year 2035 in Figure \ref{fig:quickSOprog} and Figure \ref{fig:ghgremSOprog}), and the wind stress anomalies cause this anomalously warm CDW (which is already warmer than waters above it in the mean state) to be upwelled closer to ice sheet outlets. 
+
+%\begin{landscape}
+%
+%\begin{figure*}[p] % the star afterwards makes it a one column fig in a 2-col document
+%\begin{landscapefigure*}
+%\centering
+% \noindent\includegraphics[width=40pc]{figures/quickramp_SOTEMP_timeslices.pdf}
+%\caption{\textbf{Time evolution of Quickramp zonal mean Southern Ocean temperature anomalies.} The progression of annual mean, zonal mean ocean potential temperature ($^\circ$C) in Quickramp, shown as yearly anomalies from 20thC (1970-1999 mean).} % @@ contours? split onto 2 pages??
+%\end{landscapefigure*}
+%\label{fig:quickSOprog}
+%\end{figure*}
+%
+%\begin{figure*}[p] % the star afterwards makes it a one column fig in a 2-col document
+%\begin{landscapefigure*}
+%\centering
+% \noindent\includegraphics[width=40pc]{figures/GHGrem_SOTEMP_timeslices.pdf}
+%\caption{\textbf{Time evolution of GHGrem zonal mean Southern Ocean temperature anomalies.} The progression of annual mean, zonal mean ocean potential temperature ($^\circ$C) in GHGrem, shown as yearly anomalies from 20thC (1970-1999 mean).}
+%\end{landscapefigure*}
+%\label{fig:ghgremSOprog}
+%\end{figure*}
+%
+%\end{landscape}
+
+Examination of the time evolution of temperature anomalies in Quickramp (Figure \ref{fig:quickSOprog}) compared to GHGrem (Figure \ref{fig:ghgremSOprog}) suggests that the primary difference in the amount of warming near ice sheets between the two scenarios, however, is likely the upwelling strength. However, further quantification of the mechanisms for the warm waters encroaching on ice shelves (previously warmed water from ocean heat uptake, or increased upwelling) is required to conclusively determine the primary contributor. Specifically, heat contributions from anomalies in circulation acting on the mean temperature gradient ($\textbf{V}' \nabla \bar{T}$) should be compared to those from anomalies in temperature acting on the divergence in the mean circulation field ($T'\nabla\cdot \bar{\textbf{V}}$), which will be a subject of further work.
+% @@ cite marshall and speer 2011 here somewhere? or find original ref from that paper...
+
+% %%%%%
+
+
+Finally, the Southern Ocean anomalies appear to persist throughout the century. Ocean temperatures, averaged south of 50$^\circ$S, indicate that warming at all depth persists until at least 2065 in Quickramp, with only the top few hundred meters cooling by 2095 (Figure \ref{fig:sotemptime}a). In contrast, GHGrem shows immediate surface cooling that continues to deepen until the end of the simulation (Figure \ref{fig:sotemptime}b). These differences are also reflected in surface temperatures (Figure \ref{fig:satlattime}) and zonal wind stress (not shown) over the Southern Ocean until the end of the century.
+
+The opposing features induced by the addition of stratospheric aerosols versus the removal of GHGs highlights the inability of the stratospheric sulfate aerosols to counter greenhouse gas circulation changes and associated feedbacks. In particular, increased ocean temperatures combined with residual Southern Ocean circulation anomalies allow warmer ocean waters to access ice sheet outlet regions, leaving open the possibility of destabilization even when climate engineering is employed.
+
+%@@add something about increasing CDW due to seasonal wind stress?
+
+%@@talk about how it's not just transient: see time v depth/lat plots.
+%@@consider 200-800m temp maps (not as good in the end). also, check SH full zonal climo. Also redo SH maps w/ zoomed in
+%@@move on to subsfc ocean: show time v depth plots of just Southern ocean TEMP plus maybe SHF in just the SO? Finale will be zonal means of TEMP with depth and ocean TEMP in 200-500m layer (plus perhaps the sector zonal means).
+%@@Need to ref my other 2 papers
+% change in wind stress curl zero crossings:
+% Quickramp: -0.26268 deg
+% GHGrem1850: 0.14516 deg
+% RCP8.5: -0.27351 deg
+
+\begin{figure}[htbp] % the star afterwards makes it a one column fig in a 2-col document
+\centering
+ \noindent\includegraphics[width=20pc]{figures/SOTEMPtime2.pdf}
+\caption{\textbf{Averaged Southern Ocean temperature anomalies with depth and time.} Annual mean, Southern Ocean mean (south of 50$^\circ$S), zonal mean ocean potential temperature ($^\circ$C) anomaly from 20thC (1970-1999 mean), with depth (km) and time (years). Years 1970-2005 are 20thC anomalies, years 2006-2034 are RCP8.5 anomalies, and years 2035 onward (denoted by the large gray tick mark) are \textbf{(a)} Quickramp and \textbf{(b)} GHGrem anomalies. Gray boxes indicate the years of averaging for previous figures, in particular Figures \ref{fig:shsubtemp}e and \ref{fig:shsubtemp}f.}
+\label{fig:sotemptime}
+\end{figure}
+
+%\begin{figure*}%[htbp] % the star afterwards makes it a one column fig in a 2-col document
+%\centering
+% \noindent\includegraphics[width=39pc]{figures/SHzonmeanTEMP.pdf}
+%\caption{Annual mean, zonal mean ocean potential temperature ($^\circ$C) anomaly, with depth (m), from the 20thC (1970-1999 mean) \textbf{(a)} RCP8.5, \textbf{(b)} Quickramp, and \textbf{(d)} GHGrem years 2045-2054. @@Add ocean temp 200-500m @@ Remove RCP8.5 i think. we know that each geo option is "better" than nothing}
+%\label{fig:shzmtemp}
+%\end{figure*}
+
+
+% @@ put GHG concentrations fig in "supplementary"?
+
+\section{Discussion and conclusions}
+
+% answer: s the SAT response pattern indicative of ``delayed Southern Ocean cooling", analogous to the well-known delayed warming, or is this asymmetry unique to sulfate geoengineering? Does the SAT pattern reflect similar subsurface ocean temperature features? And finally, how might this affect Antarctic ice sheet stability?
+% @@ other points: tropical SSTs can affect SH circulation in a way that increases warm atmospheric advection to WAIS and forces more CDW into at-risk ice shelve regions
+% sea ice generation that produces dense salty water plays a role in getting warm CDW up onto continental shelves (see Joughin11, ocean instability section)
+% if get to the point where I include PIG sector figures: jacobs11 and jenkins11 are potentially good refs.
+% @@ say more about the first section of the paper: timescales.....
+SRM, particularly with stratospheric aerosols, has been suggested as a `backstop' measure that could be rapidly deployed to avoid so-called climate emergencies, one of which is sea level rise due to destabilization of marine ice sheets \citep{blackstock09}. Here we show that while the rapid addition of stratospheric sulfate aerosols may immediately stop and reverse global mean steric sea level rise at the expense of large land SAT trends, it does not counteract circulation changes that make warmer subsurface waters more available for basal melting of ice shelves around Antarctica. Because these circulation changes are fundamentally due to modification of the stratospheric meridional temperature gradient through the combination of sulfates deployment and increased GHGs, these circulation changes persist for as long as GHGs and sulfates are in the atmosphere, delaying both surface and subsurface cooling over and in the Southern Ocean. We also find that, alternatively, reducing greenhouse gases in the atmosphere does counterbalance circulation changes and is hence significantly more effective at cooling the Southern Hemisphere, particularly over and in the Southern Ocean. 
+%Additionally, % teleconnections
+% @@another point: the longer one waits, 1. the more sulfate necessary and 2. the more heat has been buried in the ocean that could reach the ice shelves.
+%@@ This result provides yet more evidence for the inadequacy of SRM via stratospheric sulfate aerosols and more evidence for reduction of GHGs as the best method of avoiding climate emergencies.
+
+%The long timescale of response of the ocean also means that 
+
+One implication of our results is that the more ocean heat uptake that occurs prior to the start of SRM, the greater the risk of warmer waters encroaching on ice shelves even after SRM commences. These results can be extrapolated to include marine outlet glaciers in Greenland, which SRM has previously been shown --- via surface mass balance calculations only --- to effectively preserve \citep{irvine09}. However, basal melt is also very important to the health of the Greenland ice sheet, and has been implicated as the cause of the recent acceleration of its outlet glaciers (e.g., \cite{dholland08}). Thus, subsurface ocean conditions must also be considered in evaluating the ability of stratospheric aerosols or SRM in general to preserve the Greenland ice sheet.
+
+Surface temperatures are undoubtedly cooler when stratospheric aerosols are in use. However, while general circulation models such as the one we employ do not resolve ice shelves and sub-scale processes that influence their thickness (e.g., small-scale mixing, tidal currents; \cite{joughin11}), we have shown that the large-scale oceanic environment under stratospheric sulfate aerosols after a period of warming would be favorable for further thinning of Antarctic ice shelves. Thus, while the injection of stratospheric aerosols may be effective at avoiding some eventual climate impacts due to global warming, we highlight the potential that this strategy may not be effective at avoiding one of the oft cited climate ``emergencies": destabilization of the West Antarctic ice sheet. Given the host of potential problems already associated with stratospheric aerosol injections --- including but not limited to ozone depletion \citep{tilmes08,heckendorn09}, risk of rapid warming upon cessation (e.g., \cite{mccusker14}), continued ocean acidification \citep{feely04}, and reduced precipitation (e.g., \cite{bala08}) --- our results contribute further evidence as to why a reduction in GHGs is a much more highly desirable solution. % This may especially be the case if the WAIS is observed to already be destabilizing before stratospheric sulfates are deployed. Preemptive deployment might then avoid this risk, however we have also shown that a reduction in greenhouse gases would be more effective at preserving WAIS. 
+
+
+
+%  and so delaying implementation means stronger SRM is required. Additionally, delayed action allows continued ocean heat uptake that @@
+%%% End of body of article:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Optional Appendix goes here
+%
+% \appendix resets counters and redefines section heads
+% but doesn't print anything.
+% After typing  \appendix
+%
+% \section{Here Is Appendix Title}
+% will show
+% Appendix A: Here Is Appendix Title
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Optional Glossary or Notation section, goes here
+%
+%%%%%%%%%%%%%%
+% Glossary is only allowed in Reviews of Geophysics
+% \section*{Glossary}
+% \paragraph{Term}
+% Term Definition here
+%
+%%%%%%%%%%%%%%
+% Notation -- End each entry with a period.
+% \begin{notation}
+% Term & definition.\\
+% Second term & second definition.\\
+% \end{notation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  ACKNOWLEDGMENTS
+
+\begin{acknowledgments}
+(Text here)
+\end{acknowledgments}
+
+%% ------------------------------------------------------------------------ %%
+%%  REFERENCE LIST AND TEXT CITATIONS
+%
+% Either type in your references using
+% \begin{thebibliography}{}
+% \bibitem{}
+% Text
+% \end{thebibliography}
+%
+% Or,
+%
+% If you use BiBTeX for your references, please produce your .bbl
+% file and copy the contents into your paper here.
+%
+% Follow these steps:
+% 1. Run LaTeX on your LaTeX file.
+%
+% 2. Run BiBTeX on your LaTeX file.
+%
+% 3. Open the new .bbl file containing the reference list and
+%   copy all the contents into your LaTeX file here.
+%
+% 4. Comment out the old \bibliographystyle and \bibliography commands.
+%
+% 5. Run LaTeX on your new file before submitting.
+%
+% AGU DOES NOT WANT a .bib or a .bbl file. Please copy in the contents of your .bbl file here.
+
+%\bibliographystyle{plain}
+\clearpage
+\bibliographystyle{/Users/kelly/Dropbox/latexbib/ametsoc}
+\bibliography{/Users/kelly/Dropbox/latexbib/allrefs}
+
+%\begin{thebibliography}{}
+
+%\bibitem[{\textit{Kilby}(2008)}]{jskilby}
+%Kilby, J. S. (2008), Invention of the integrated circuit, {\it IEEE
+%Trans. Electron Devices,} \textit{23}, 648--650.
+
+%\bibitem[{\textit{Kilby et al.}(2008)}]{jskilbye}
+%Kilby, J. S., S. Smith, and R. Jones (2008), Invention of the
+%integrated circuit, {\it IEEE Trans. Electron Devices,} \textit{23},
+%648--650.
+
+%\end{thebibliography}
+
+%Reference citation examples:
+
+%...as shown by \textit{Kilby} [2008].
+%...as shown by {\textit  {Lewin}} [1976], {\textit  {Carson}} [1986], {\textit  {Bartholdy and Billi}} [2002], and {\textit  {Rinaldi}} [2003].
+%...has been shown [\textit{Kilby et al.}, 2008].
+%...has been shown [{\textit  {Lewin}}, 1976; {\textit  {Carson}}, 1986; {\textit  {Bartholdy and Billi}}, 2002; {\textit  {Rinaldi}}, 2003].
+
+
+%...as shown by \citet{jskilby}.
+%...as shown by \citet{lewin76}, \citet{carson86}, \citet{bartoldy02}, and \citet{rinaldi03}.
+%...has been shown \citep{jskilbye}.
+%...has been shown \citep{lewin76,carson86,bartoldy02,rinaldi03}.
+%
+% Please use ONLY \citet and \citep for reference citations. 
+% DO NOT use other cite commands (e.g., \cite, \citeyear, \nocite, \citealp, etc.).
+
+%% ------------------------------------------------------------------------ %%
+%
+%  END ARTICLE
+%
+%% ------------------------------------------------------------------------ %%
+
+\end{article}
+
+%% Enter Figures and Tables here:
+
+% When submitting articles through the GEMS system:
+% COMMENT OUT ANY COMMANDS THAT INCLUDE GRAPHICS.
+
+% Figure captions go below the figure.
+% Table titles go above tables; all other caption information 
+%  should be placed in footnotes below the table.
+
+
+% DRAFT figure/table, including eps graphics
+%
+% \begin{figure}
+% \noindent\includegraphics[width=20pc]{samplefigure.eps}
+% \caption{Caption text here}
+% \end{figure}
+% \end{document}
+%
+% \begin{table}
+% \caption{}
+% \end{table}
+%
+% ---------------
+% TWO-COLUMN figure/table
+%
+% \begin{figure*}
+% \noindent\includegraphics[width=39pc]{samplefigure.eps}
+% \caption{Caption text here}
+% \end{figure*}
+%
+% \begin{table*}
+% \caption{Caption text here}
+% \end{table*}
+%
+% ---------------
+% EXAMPLE TABLE
+%
+%\begin{table}
+%\caption{Time of the Transition Between Phase 1 and Phase 2\tablenotemark{a}}
+%\centering
+%\begin{tabular}{l c}
+%\hline
+% Run  & Time (min)  \\
+%\hline
+%  $l1$  & 260   \\
+%  $l2$  & 300   \\
+%  $l3$  & 340   \\
+%  $h1$  & 270   \\
+%  $h2$  & 250   \\
+%  $h3$  & 380   \\
+%  $r1$  & 370   \\
+%  $r2$  & 390   \\
+%\hline
+%\end{tabular}
+%\tablenotetext{a}{Footnote text here.}
+%\end{table}
+
+% See below for how to make landscape/sideways figures or tables.
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+More Information and Advice:
+
+%% ------------------------------------------------------------------------ %%
+%
+%  SECTION HEADS
+%
+%% ------------------------------------------------------------------------ %%
+
+% Capitalize the first letter of each word (except for
+% prepositions, conjunctions, and articles that are
+% three or fewer letters).
+
+% AGU follows standard outline style; therefore, there cannot be a section 1 without
+% a section 2, or a section 2.3.1 without a section 2.3.2.
+% Please make sure your section numbers are balanced.
+% ---------------
+% Level 1 head
+%
+% Use the \section{} command to identify level 1 heads;
+% type the appropriate head wording between the curly
+% brackets, as shown below.
+%
+%An example:
+%\section{Level 1 Head: Introduction}
+%
+% ---------------
+% Level 2 head
+%
+% Use the \subsection{} command to identify level 2 heads.
+%An example:
+%\subsection{Level 2 Head}
+%
+% ---------------
+% Level 3 head
+%
+% Use the \subsubsection{} command to identify level 3 heads
+%An example:
+%\subsubsection{Level 3 Head}
+%
+%---------------
+% Level 4 head
+%
+% Use the \subsubsubsection{} command to identify level 3 heads
+% An example:
+%\subsubsubsection{Level 4 Head} An example.
+%
+%% ------------------------------------------------------------------------ %%
+%
+%  IN-TEXT LISTS
+%
+%% ------------------------------------------------------------------------ %%
+%
+% Do not use bulleted lists; enumerated lists are okay.
+% \begin{enumerate}
+% \item
+% \item
+% \item
+% \end{enumerate}
+%
+%% ------------------------------------------------------------------------ %%
+%
+%  EQUATIONS
+%
+%% ------------------------------------------------------------------------ %%
+
+% Single-line equations are centered.
+% Equation arrays will appear left-aligned.
+
+Math coded inside display math mode \[ ...\]
+ will not be numbered, e.g.,:
+ \[ x^2=y^2 + z^2\]
+
+ Math coded inside \begin{equation} and \end{equation} will
+ be automatically numbered, e.g.,:
+ \begin{equation}
+ x^2=y^2 + z^2
+ \end{equation}
+
+% IF YOU HAVE MULTI-LINE EQUATIONS, PLEASE
+% BREAK THE EQUATIONS INTO TWO OR MORE LINES
+% OF SINGLE COLUMN WIDTH (20 pc, 8.3 cm)
+% using double backslashes (\\).
+
+% To create multiline equations, use the
+% \begin{eqnarray} and \end{eqnarray} environment
+% as demonstrated below.
+\begin{eqnarray}
+  x_{1} & = & (x - x_{0}) \cos \Theta \nonumber \\
+        && + (y - y_{0}) \sin \Theta  \nonumber \\
+  y_{1} & = & -(x - x_{0}) \sin \Theta \nonumber \\
+        && + (y - y_{0}) \cos \Theta.
+\end{eqnarray}
+
+%If you don't want an equation number, use the star form:
+%\begin{eqnarray*}...\end{eqnarray*}
+
+% Break each line at a sign of operation
+% (+, -, etc.) if possible, with the sign of operation
+% on the new line.
+
+% Indent second and subsequent lines to align with
+% the first character following the equal sign on the
+% first line.
+
+% Use an \hspace{} command to insert horizontal space
+% into your equation if necessary. Place an appropriate
+% unit of measure between the curly braces, e.g.
+% \hspace{1in}; you may have to experiment to achieve
+% the correct amount of space.
+
+
+%% ------------------------------------------------------------------------ %%
+%
+%  EQUATION NUMBERING: COUNTER
+%
+%% ------------------------------------------------------------------------ %%
+
+% You may change equation numbering by resetting
+% the equation counter or by explicitly numbering
+% an equation.
+
+% To explicitly number an equation, type \eqnum{}
+% (with the desired number between the brackets)
+% after the \begin{equation} or \begin{eqnarray}
+% command.  The \eqnum{} command will affect only
+% the equation it appears with; LaTeX will number
+% any equations appearing later in the manuscript
+% according to the equation counter.
+%
+
+% If you have a multiline equation that needs only
+% one equation number, use a \nonumber command in
+% front of the double backslashes (\\) as shown in
+% the multiline equation above.
+
+%% ------------------------------------------------------------------------ %%
+%
+%  LANDSCAPE/SIDEWAYS FIGURE AND TABLE EXAMPLES
+%
+%% ------------------------------------------------------------------------ %%
+%
+% For figures, add \usepackage{lscape} to the file and the landscape.sty style file
+% to the paper folder.
+%
+% \begin{figure*}[p]
+% \begin{landscapefigure*}
+% Illustration here.
+% \caption{caption here}
+% \end{landscapefigure*}
+% \end{figure*}
+%
+% For tables, add \usepackage{rotating} to the paper and add the rotating.sty file to the folder.
+%
+% AGU prefers the use of {sidewaystable} over {landscapetable} as it causes fewer problems.
+%
+% \begin{sidewaystable}
+% \caption{}
+% \begin{tabular}
+% Table layout here.
+% \end{tabular}
+% \end{sidewaystable}
+%
+%
+
